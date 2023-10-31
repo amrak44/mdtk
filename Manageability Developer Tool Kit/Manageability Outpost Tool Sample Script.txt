@@ -1,0 +1,10 @@
+:Start
+Send "`"
+WaitFor "HELP"
+Send "ps\r"
+Send "time\r"
+Send "\a\a\r"
+Send "help\r"
+Send "clear\r"
+Send "`"
+Jump "Start"

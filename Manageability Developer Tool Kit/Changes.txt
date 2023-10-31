@@ -1,0 +1,801 @@
+Manageability Developer Tool Kit
+--------------------------------
+
+Latest Update at: http://opentools.homeip.net
+
+Changes in v1.34
+
+ - Added DDR4
+ - Fixed problem with USB flasher tool not generating a valid setup.bin file.
+
+Changes in v1.29
+
+ - Commander can now connect to any Mesh server, not just Meshcentral.com. Go in "File --> Add --> Add Online Service..." and "Edit Servers..." to add your server and connect to it.
+
+Changes in v1.28
+
+ - Added support for audit log features in Intel AMT 6.0+
+
+Changes in v1.27
+
+ - Added latest version of Switchbox tool.
+
+Changes in v1.24
+
+ - Fixed the user interface in Commander used to configure Intel AMT TLS. The UI looks better and fixed problem where it was possible to try to setup TLS without a certificate.
+ - Fixed memory leak when HECI/MEI fails to receive response.
+
+Changes in v1.23
+
+ - Added IDER-R CD/DVD secure boot support for Intel AMT 8.1 and higher.
+ - Fixed some cases where connecting to Intel AMT with limited rights would cause crashes.
+
+Changes in v1.21
+
+ - Updated mesh library.
+ - Add Intel AMT Computer now accepts IPv6 addresses, must be entered as with starting "[" and ending "]" like "[::1]".
+
+Changes in v1.20
+
+ - Fixed crash when no remote control service is present.
+ - Added message to indicate that "-alttst:0" command line argument is needed to connect terminal to MPS.
+ 
+Changes in v1.19
+
+ - Fixed crash in ME info form when closing the form quickly.
+ - Added message box when closing the terminal and IDE-R session is still active.
+ - Printing the Memory Asset Tag in hardware inventory.
+ - Fixed seperator bar visibility in tree view context menu.
+ - Added better exception handling when AMTSystem changes connection state.
+
+Changes in v1.18
+
+ - Fix the way Intel AMT time is converted.
+ - Terminal no longer allows "Remote Boot to BIOS" from S1/S3 state. Option is now grayed out.
+
+Changes in v1.17
+
+ - Added anti-flickering in all Director list views.
+ - Added a "Save Log..." option and log context menu in Directory's server log.
+ - Director: Added much more logging information from the ConfigurationServer.exe is called from Director. This
+   should help debug if phase 1 provisioning fails.
+
+Changes in v1.16
+
+ - Fixed Commander taking a long time to load, put HBP check on a different thread.
+ - Terminal window now has manual user consent option in the "Terminal" menu.
+
+Changes in v1.14
+
+ - Fixed Director PKI provisioning when not running as administrator.
+
+Changes in v1.12
+
+ - Commander can now perform hardware KVM sessions to the redirection port (16993/16994) using any VNC client.
+   To do this, Commander will make the client connect to a local port and forward the traffic to Intel AMT using
+   the redirection protocol. If port 5900 on Intel AMT is enabled, the VNC client is used normally.
+
+--- Lots of changes occured here over 3+ years ---
+
+Changes in v0.80
+
+ - Added DDR3 memory type support.
+ - Updated PCI vendor.txt file.
+ - Fixed problem that stopped Commander from connecting to Intel AMT set to WSMAN-only.
+
+Changes in v0.79
+
+ - Corrected and improved asset inventory view in Commander, expecialy when loaded with WSMAN.
+
+Changes in v0.78
+
+ - Improved Intel AMT host based provisioning support to Commander & Outpost.
+ - Added unprovisioning support in "Intel ME Information" form.
+
+Changes in v0.77
+
+ - Added Intel AMT host based provisioning support to Commander & Outpost.
+   Must have Intel AMT 6.1 or higher and run Commander/Outpost with administrator rights.
+
+Changes in v0.76
+
+ - Removed Switchbox support since it's been replaced the Mesh.
+ - Removed Manageability Monitor Tools, replaced with Meshcentral.
+ - Fixed the help menu links.
+
+Changes in v0.75
+
+ - Fixed the disconnect button not working properly in Commander.
+
+Changes in v0.60
+
+ - Updated to new WSMAN code.
+ - Added Mesh support
+ - Added alarm clock support.
+ - Added remote desktop support using external viewer.
+ - Added remote desktop over mesh support.
+ - Fixed bugs in VT100 implementation.
+
+Changes in v0.56
+
+ - Added support for Mesh service.
+ - Added code signing. This is good to insure proper auto updates.
+ - Auto-update will hide if AutoUpdateTool.exe is not present.
+ - Added special installer for Commander for Netbooks.
+ - Updated to the latest Resource Translator Tool.
+ - All tools now run natively in 64 bit. All native DLL's now have two versions.
+ - Updated to Visual Studio 2010.
+ - Added self-updating system.
+ - Lots of fixing in the StorageWrapper to handle 64bit.
+
+Changes in v0.55
+
+ - Fixed terminal window title
+ - Terminal can now perform SOL/IDER to computer with untrusted TLS root
+
+Changes in v0.54
+
+ - Fixed terminal resolving "localhost" to IPv6 loopback.
+ - Rebranded all tools in the new Manageability Developer Tool Kit.
+ - New software license agreement.
+ - Terminal: Fixed global heap memory leak when reading Serial-over-LAN.
+ - Commander: Added IDE-R support when using MPS.
+ - Controller: Now uses local FQDN instead of 127.0.0.1 when possible.
+ - All new certificates now valid starting -10 days, ending in 20 years.
+ - OpenAmtCmd: Added power state query command.
+ - Added a test version of Ressource Translator with auto-translate & spell check.
+ - Commander: Correct Switchbox many name cert match. 
+ - Controller: Fixed "Manage Computers..." when no TLS is used.
+ - Updated new Japanese translation.
+ - Commander: Fixed SOL occasionally disconnecting.
+ - Changed the Manageability DTK license.
+ - Commander: Motherboard asset shows "Replaceble" correctly with WSMAN.
+ - All tools: Fixed AMT time conversion, was 1 day off.
+ - Terminal: New auto-sizing terminal & font selection.
+ - Stack: Added new TerminalAutoSize control.
+ - Commander/Connector: Fixed configuration of periodic CIRA.
+ - Manageability Net Status Tool: Fixed incorrect ping response problem.
+ - Terminal: Added return sends CR/LF or CR only option in advanced options.
+ - Connector: Added timed auto-connect/disconnect testing feature.
+ - Connector, Protector: Added warning is HeciWrapper.dll is missing.
+ - Controller: Fixed problem with loading large HTTP documents.
+ - Commander: Improved handling when SOAP 3PDS can't connect.
+
+Changes in v0.53
+
+ - Controller: Removed disk redirection tab since not implemented yet.
+ - Commander: Fixed Korean resource error in mainform.
+ - Commander: Fixed remote control when WSMAN in use.
+ - Moved over to Microsoft Visual Studio 2008.
+ - Defender: Added advanced options in view menu.
+ - Commander: Added HTTP timeout setting in advanced properties menu.
+ - Connector: Added HECI bridge support.
+ - Added Traditional Chinese (zh-CHT) to translation tool.
+ - Outpost: Added ME information to Outpost file menu.
+ - All of DTK: Corrected all tab orders in all forms.
+ - Outpost: Added VT100 process monitor, use "TOP" command.
+ - Cleaned up solutions files, "x86" should always be used.
+ - Commander, Defender: Initial work on adding MONO 1.9.1 support.
+ - Outpost: Added Serial-over-LAN chat support, use "CHAT" command.
+ - Outpost: Fixed case where CPU usage counter is not available.
+ - Terminal: Added agent foundation diagnostic support.
+ - Commander/Outpost: Updated diagnostic viewer.
+ - Commander: Displays error if IMRSDK.dll or StorageWrapper.dll missing.
+ - Outpost: Reverse-watchdog works correctly in WSMAN mode.
+ - Switchbox/Guardport: Updated to latest version.
+ - Terminal: Added support for ALT key press over SOL to Guardpost.
+ - Terminal: Fixed terminal not refreshing screen in some cases.
+ - Controller: Forced "localhost" to resolve to 127.0.0.1 not IPv6 ::1.
+ - Controller: Fixed configuration crash.
+ - Commander: Improved audit log error handling when using SOAP.
+ - Commander: Clear audit log now locks and works correctly.
+ - Commander: User permission edit error fixed.
+ - Connector: Added "Start Remote Configuration" support for AMT 3.0+.
+ - Connector: Fixed remote configuration enabled indicator.
+ - Controller, Commander: Now send certificate chain to Switchbox.
+ - Commander: Can remove computers under an MPS correctly.
+ - Connector, Commander, Outpost fixed for Castle Peak.
+ - Commander: Fixed cut & paste bug introduced with MPS support.
+ - Added latest Japanese translation to all of the DTK.
+
+Changes in v0.52
+
+ - Commander: Updated IMRSDK.dll to the latest version with SOCKS support.
+ - Terminal: Turns off packet codes when issuing remote command.
+ - Terminal: Fixed mouse-over-Terminal support.
+ - Terminal: Fixed device & process management user interface.
+ - Guardpost: Added device management support.
+ - Guardpost: New optimization to command prompt to VT100 conversion.
+ - Commander: Changed CB filter & policy cut & paste clipboard XML.
+ - Commander: SOL & IDE-R work correctly with Sub-CA certificates.
+ - Commander: Added MPS support (untested).
+ - Commander: Fixed 3PDS bug introduced in v0.50.
+ - Terminal: Improved clear to end of line escape code handling.
+ - Stack: Now serializes MPS (HTTP/SOCKS) proxy settings.
+ - Stack: WSMAN dual-ported AMT power package control.
+ - Stack: Added MPS (HTTP/SOCKS) proxy support.
+ - Commander: Fixed filter panel not displaying correctly.
+ - Commander: Audit log policy dialog now shows the auditors.
+ - Interceptor: Fixed login issue when admin password is changed.
+ - Stack: Fixed user realms permission assignments.
+
+Changes in v0.51
+
+ - Commander: Fixed error with hardware asset printing feature.
+ - Terminal: IDE-R using images on a share drive is now rejected (never worked).
+ - Defender: Makes use of the "Connecting" icons.
+ - Defender: Can't power on a system that is already in S0.
+ - Add new Manageability Flash Drive Tool, a USB flash provisioning tool.
+ - Terminal: Can now detect disconnection, improved error handling.
+ - Connector: Added currently enrolled MSP name.
+ - Stack: Added "SetRemoteServerPassword" to remote admin service.
+ - Terminal: Power On is disabled if system is already in S0.
+ - Stack: Added "LoadDocument" method to AmtSystem class for testing.
+ - Stack: Fixed issues with Get/Delete with selectors.
+ - Stack: Remote Admin service is now fully WSMAN dual ported.
+ - Outpost: Added agent presence support for WSMAN only AMT.
+ - Stack/Commander: Added Castle Peak 3PDS support.
+ - Connector: Display ME MAC addresses in status dialog.
+ - Outpost: Added AMT 3.0+ WSMAN only support & UI indicator.
+ - Net Reflector: Added "-start" command line argument.
+ - Stack: Added WSMAN support for SNMP alert subscriptions.
+ - Commander/Defender: Added support for WSMAN-only AMT 3.0 and up.
+ - Connector: Improved UI when running on non-AMT computer.
+ - Commander: Added support for Soft-CIRA connected computers.
+ - Terminal: IDE-R grayed out if IDE-R is disabled.
+ - Started adding online help with Commander and network tools.
+ - Reflector: Correctly handles busy ports.
+ - Director: Shows an error if provisioning server port is busy.
+ - Stack: Audit log is now fully dual-posted to WSMAN.
+ - Net Traffic: Fixed crash when closing while running.
+ - Stack: Fixed WSMAN support for AMT 4.0 and beyond.
+ - Stack: Fixed hardware asset memory values when using WSMAN.
+ - Connector: Fixed memory leak.
+ - Automation: Added "-threads:X" command line argument.
+ - Stack: Built stand-alone WSMAN stack, removed WinRM dependency.
+
+Changes in v0.50
+
+ - Switchbox: Updated, added IDE-R over CIRA, many bug fixes.
+ - Commander: User can now clear alert log.
+ - Added Open Net Reflector tool, performs TCP redirections.
+ - Stack: Added AMT 5.0 wake-on-event WSDL support.
+ - Terminal: All child forms will close correctly on disconnection.
+ - Stack: Added full WSMAN support for trusted root cert store.
+ - All tools: Added improved Japanese translations.
+ - Connector: Added support for HECI debug messages.
+ - Commander: Can now set wired DHCP/static on AMT 4.0.
+ - Commander: Improved AMT 4.0 wireless support.
+ - Commander: Improved event filter handling, added cut & paste.
+ - Connector: Added soft-CIRA support.
+ - Connector: Fixed icon sometimes displayed incorrect state.
+
+Changes in v0.49
+ 
+ - Outpost: Fixed serial-over-LAN remote watchdog feature.
+ - Connector: Added stay connected and auto-disconnect testing features.
+ - Terminal: Added drag & drop support to script editor.
+ - Terminal: Added "jump n times" support.
+ - Terminal: Added "Power up" scripting support.
+ - All tools: General proxy setting ignored. Added "-proxy:<proxy>" argument.
+ - Outpost: Added WSMAN-only detection and support.
+ - Stack: Added support for decoding user initiated connection request events.
+ - Connector: now supports requesting help while in direct connect mode.
+ - Stack: Clear event log now fixed, WSMAN support added.
+ - Controller & Automation: Added computer cut & paste support.
+ - Stack: 3PDS now WSMAN enabled.
+ - Added Manageability Automation Tool tool to Manageability DTK.
+ - Commander: Added Switchbox credential change UI.
+ - Commander: Added refresh button to network settings.
+ - Commander: Audit log display now sorted correctly.
+ - Fixed translations broken in v0.48.
+ - Controller: Invokes Commander with new "sbconnect" parameter to manage a computer.
+ - Commander: Supports "-sbconnect" to auto-connect to a specific machine after connecting to SB.
+ - Controller: Now issues "all permissions" certificates to Switchbox.
+ - Commander: Improved environment detection edits that cause disconnections.
+ - Commander: Fixed rebranding feature broken since 0.47.
+ - Stack: AmtRedirect class now WSMAN compliant. 
+ - Commander: Added network time read, sync and set support.
+ - Stack: Added Network Time service with WSMAN & SOAP support.
+ - Connector: Improved suspend/resume behavior.
+ - Controller: Improved remote management channel display information.
+ - Stack: Updated Remote Access Admin SOAP class to SDK Beta 1.
+ - Stack: Improved WSMAN support for Remote Access Admin.
+ - Connector: Added new status images, fixed exception when no audit record.
+ - Stack: Implemented anti-lockup behavior when disconnecting SOL.
+ - Stack: Updated WSMAN classes to Beta 1 SDK.
+ - Commander: Added initial support for WSMAN-only mode.
+ - Stack: Added WSMAN-only detection.
+
+Changes in v0.48
+
+ - Connector: Added Manageability Connector Tool, a CIRA control tool for AMT 4.0, 5.0 and Castle Peak.
+ - Terminal: Fixed problems with connections to mutual-auth systems.
+ - Stack: Improved handing of Mutual-Auth and added OpenSSL presence detection.
+ - Commander & Director: Added connecting icon.
+ - Commander: Completely redesigned the MainForm, split panels into seperate files.
+ - Commander: Improved audit log configuration user interface.
+ - Stack: Improved handing of situation where Intel AMT returns 401 unautorized incorrectly.
+ - Director: Now shows non-exportable certificates in red, rejects use for remote config.
+ - Controller: No longer uses default HTTP proxy, added "-proxy:<host>" switch.
+ - Director: Now issues TLS certificates with multiple common names, like Intel SCS.
+ - Commander & Director: Now match against all common names with TLS certificate.
+ - Commander & Director: Now warn when mutual-auth private key is not exportable.
+ - Stack: Now using EnumerateGeneralAlertSubscriptions() on AMT 2.5 and higher.
+ - Terminal: Now makes use of the VT100 terminal control.
+ - Controls: Split the VT100 terminal in a seperate user control.
+ - Director: Can now issue TLS certificates from sub-CA certs.
+ - Controller: Added partial French translation.
+ - Director: Added DER format support for certificate export.
+ - Terminal: Improved handling of TCP connection closure.
+ - Fixed how the local FQDN is obtained on domain controller computers.
+ - Controller & Commander: Can now issue certificates with user defined names.
+ - Terminal: Added display cursor to VT100 terminal.
+
+Changes in v0.47
+
+ - Added support for Client Initiated Remote Access (CIRA).
+ - Commander: Remove WSMAN support in the Edit->Advanced Properties dialog.
+ - Improved Commander, Controller, Switchbox integration.
+ - Controller & Commander: Can now create root certificates within issuing form.
+ - Controller: Improved certificate issuing to a Switchbox.
+ - Controller: Added arguments: -h:<host> -u:<user> -p:<pass> -tls -notls -movetotray
+ - Outpost: No longer throws an error when connection to LMS fails.
+ - Added a "-NOWSMAN" command line switch to all major tools.
+ - Defender: Will not crash when connecting to LMS (localhost).
+ - Interceptor: Fixed a frequent problem with connection.
+ - Terminal: Accelerated VT100 display painting.
+ - Terminal: In silent mode, terminal will log messages into script.log.
+ - Terminal: Fixed a few scripting related UI issues.
+ - Terminal: Added "-silent" support for running scripts in background.
+ - Changed IAMT.dll to StorageWrapper.dll, updated to compile in VS2006.
+ - Terminal: Added context menu for all special keys in scripting.
+ - Terminal: Added new "Advanced Properties" dialog box to terminal.
+ - Terminal: "Paste" menu option is grayed out when clipboard is not text.
+ - Terminal: Fixed problem with saving and opening script files.
+ - Many file operations will not correctly report errors to the user.
+ - Terminal: Added copy screen and paste to terminal.
+ - Outpost: Heartbeat more slowly and only when needed.
+ - Stack: Private key now deleted correctly when removing certificate from store.
+ - Director: Makes use of certificate store for TLS certificates in AMT 2.5+.
+ - Updated many namespace names to more consistent ones.
+ - Stack: Changed name of stack to "Open AMT Stack"
+ - Outpost: Replaced Outpost event log with Intel AMT event log.
+ - Outpost: No longer reads EAC posture if EAC is disabled.
+ - Updated Outpost service to use new stack.
+ - Outpost: Now uses the same AMT stack as Commander & Defender.
+ - Stack: Unified local and remote AMT stacks.
+
+Changes in v0.46
+
+ - Commander: 3PDS block loading is now asyncronious.
+ - Stack: Improved performance for HEX to byte[] and byte[] to HEX methods.
+ - Stack: Added 3PDS block data caching.
+ - Commander & Outpost: Maximum 3PDS single block allocation is 64k.
+ - Commander: Can now edit user account and access information.
+ - Commander & Director: Improves user account & access UI.
+ - Commander: Improved the wireless profile configuration UI.
+ - Commander: Improved watchdog UI with new graphics.
+ - Commander: Improved the remote management configuration UI.
+ - Stack: Improved wireless managed interface detection.
+ - NetTraffic: Removed the "-advanced" command line option, always on by default.
+ - Commander: Improved heuristic support, added graphics.
+ - Commander: Added audit log locking support.
+ - Director: Exporting in PFX format without password no longer allowed (Corrupted file was created).
+ - Director: Can now drag & drop certificates for import.
+ - Director: Can now import .PEM certificates with no private key.
+ - Added full support for the "Remote Access" service.
+ - Added "Remote Access Admin" and "AuditLog" classes.
+ - Now using Intel AMT SDK 4.0 Alpha 1.
+
+Changes in v0.45
+
+ - Commander: Can now display event log when connected to LMS.
+ - AMT Stack: Will now gracefully handle Get8021XActiveS0() failing.
+ - AMT Stack: Did some cleanup of the AmtSystem class.
+ - Commander: Can now autodetect and connect localy to LMS.
+ - Commander: If present will use rebranding bitmaps in the "branding" sub-folder.
+ - Director: Improved logging duing first configuration (One-Touch or Remote Config).
+ - Stack: All WSMAN data is correctly logged into debug information log.
+ - Commander: Can now view 3PDS blocks as HTML, view setting now sticky.
+ - Commander: Added remote control capabilities, power and remote control support with WS-MAN.
+ - Stack: Added the "AmtRemoteControl" class and removed fonctions from AmtSystem class.
+ - Controller: Many improvements including account removal and computer discovery.
+ - Commander: Added some French translation to the main form.
+ - Commander: Improved call logging when communicating with Switchbox.
+ - Terminal: Fixed TCP mode to not drop bytes at the start of the connection.
+
+Changes in v0.44
+
+ - Commander & Outpost: Improved WMI management UI.
+ - Outpost: UI will now display certificate warnings.
+ - Commander: Can now connect correctly to non-TLS Switchbox.
+ - Commander: No crash when listing user accounts with no realm permissions.
+ - Outpost: Added Kerberos login support.
+ - Terminal: Added CTRL-A to CTRL-Z support.
+ - Commander: Users can now drag & drop a file into 3PDS block.
+ - Commander & Outpost: Added 3PDS HEX, UTF8 & Image viewer.
+ - Commander & Director: Added a "Remove All Entries" menu item.
+ - Added first preview version of Manageability Switchbox Controller Tool tool.
+ - Added Korean translation of all tools.
+ - Resource Translator can now export a single language to RESX.
+ - Outpost: Added a way to store a set of WMI queries to 3PDS.
+ - Outpost: Improved 3PDS support, added HEX display to block viewer.
+ - Commander: Can now correct correctly to Switchbox configured on different port.
+ - Significantly improved AMT stack debug & error logging system.
+ - Commander & Defender: Added seconds to event log display.
+ - Terminal: SOL redirection can now be set even for ASF commands.
+ - Defender: Added French translation.
+ - Terminal: Fixed a few bugs with terminal loading and saving terminal scripts.
+
+Changes in v0.43
+
+ - IAmtTerm: Changed the names of the terminal emulations.
+ - Added Japanese translation for Manageability Network Defense Tool and many more forms in the DTK.
+ - Commander: Will not initialise the redirection library until it's needed.
+ - Director: User can now set keys to ready or used in USB file setup viewer.
+ - Director: Fixed hello packet viewer "\r\n" in the text box.
+
+Changes in v0.42
+
+ - Added UsbFile.exe and UsbFile2.exe in Manageability DTK package.
+ - Outpost: Serial agent default permissions are now set to allow all.
+ - Terminal: Started work on WMI "Remote Management" form in Serial Agent menu.
+ - Outpost: Added WMI query/response system.
+ - Manageability Guardpost Tool can be create Microsoft Windows Restore Points.
+ - Director: Added support for Kerberos user account using SID HEX.
+ - Added bright background color support to IAmtTerm.
+ - Added command prompt shell in Manageability Guardpost Tool v0.04.
+ - Added propriatary mouse support in Open AMT Terminal, compatible with Guardpost.
+ - Fixed UI bug in Add Filter Form.
+ - Commander: Interceptor now has an improved WSMAN header parser.
+ - Manageability Switchbox is not tested to work with WSMAN, fixed a bug with Commander using WSMAN with Switchbox.
+ - Created new MSI installer for the Manageability DTK.
+ - Commander: Interceptor now saves event filters into registry.
+ - Commander: Fixed IDE-R/SOL timeout settings and added defaults in View->Advanced Properties.
+ - Commander: Added IDE-R/SOL decoding in Switchbox packet viewer.
+ - Commander: Improved decoding of SOL redirection messages in Switchbox Interceptor.
+ - Added support for more ACL's in Manageability Director Tool and fixed existing ones.
+ - Added Kerberos options support in Manageability Commander Tool.
+ - Stopped using Get/Set PowerSavingOptions unless Intel AMT 2.x (but less than 2.5).
+ - Added "View" menu to Manageability Network Defense Tool to show and hide status bar, etc.
+ - Commander: Improved certificate store dialog, added certificate import & context menus.
+ - When using WSMAN, Commander now sorts events in the correct order.
+
+Changes in v0.41
+
+ - Added Manageability Network Defense Tool, an alternative UI for Manageability Commander Tool.
+ - Added WSMAN browser to Manageability Outpost Tool for local WSMAN debug (WinRM required).
+ - Fixed issues with hardware asset parsing with WSMAN on some platforms.
+ - Improved globalization in the code, most strings moved to resource.
+ - Manageability Director Tool will not warn if a PID is associated with a non-existant profile.
+ - Added Endpoint Access Control (EAC) support to both Manageability Commander Tool and Manageability Outpost Tool.
+ - Handled cases when 802.1x does not respond correctly on AMT 3.0.2 computers (both EOI & WSMAN).
+ - Manageability Commander Tool now shows "Loading..." when the event log is being loaded, UI no longer jams.
+
+Changes in v0.40
+
+ - Added IsCached() method IAmtRemoteStack event and hardware asset classes.
+ - Added Manageability Guardpost Tool service and tray icon version, now static link libs.
+ - Added 802.1x support in Manageability Commander Tool (Network Settings dialog box).
+ - IAmtTerm no longer crashes when floppy or CDROM registry key is currupted.
+ - Improved Manageability Outpost Tool UI for internalization, made it sizable.
+ - Manageability Commander Tool now connects to Switchbox event port, auto-updated new managed computers.
+ - Merged interceptor into Manageability Commander Tool: Connect to Switchbox and press "Show Traffic..."
+ - Manageability Commander Tool: Added Kerbeors support (untested).
+ - Open AMT Terminal: Press CTRL-ALT-F1 to re-enable all debugging & scripting features.
+
+Changes in v0.39
+
+ - Fixed Manageability Outpost Tool username not being saved correctly.
+ - Commander: Added support for Intel AMT 2.5 & 3.0 certificate store.
+ - Commander: Fixed Intel AMT event time and message display when using WS-MAN.
+ - Changed all instances of UTF8Encoder.Default to UTF8Encoder.UTF8.
+ - Commander now loads PCI information from vendors.txt file and displays it in the hardware asset view.
+ - Interceptor: Fixed not displaying last received event correctly.
+ - Commander: Fixed double click & incorrect warning then connecting to Switchbox.
+ - Commander: Added IDE-R and SOL timeout settings in a new "Advanced Properties" dialog box.
+ - Commander: Added network settings form to change AMT IP address, Gateway, DNS, vLAN, etc.
+ - Commander: Double click on a computer/switchbox in the treeview will connect/disconnect.
+ - Fixed USB setup key import in Director.
+ - Commander: Added -proxy:<proxyaddress> command line argument to configure Commander to always target proxy.
+ - Director: Improved the USB setup file viewer and allowed loading of very large files (30000 keys).
+ - Added WS-MAN browser in Commander. Management Engine tab, Interaction Type. See readme.txt file.
+ - IAmtRemoteStack event log enumeration is now dual mode (SOAP / WSMAN).
+ - Got rid of most .ToLower() and some .ToUpper() to make DTK more translatable.
+ - Improved interceptor handling of redirection messages.
+ - Fixed "-l:<geo>" parsing issue on all tools that support multiple languages. 
+ - Outpost & Outpost Panel added command line "-u:<username> -p:<password> -saveonly" to allow automatic preset.
+ - Commander: Fixed issue with pushing certificate to Switchbox sometimes failing.
+ - Updated IMRSDK.dll to version in Intel AMT SDK Hot Fix 1.
+ - IAmtRemoteStack asset inventory is now mostly dual mode (SOAP / WSMAN).
+ - Added WS-MAN code from the Intel AMT 3.0 SDK.
+ - Commander: Anti-spoofing filter can now be enabled & disabled correctly.
+ - Improved Resource Translation tool significantly.
+ - Outpost will now heartbeat "C0770F68-9174-479b-87A5-A821FDFEF3C8" when CPU is above 30%.
+ - Fixed Manageability Outpost Tool reading redirection log, was all zeros.
+ - Manageability Commander Tool can now correctly add and remove computer within a Switchbox.
+ - Fixed French internalization issues in Commander & Terminal.
+ - Fixed Manageability Guardpost Tool crash on TCP close, updated version to v0.03.
+
+Changes in v0.38
+
+ - Guardpost: Added TCP-over-Serial-over-LAN support, tested to work with VNC.
+ - Added interceptor, a debug & trace tool that connects to Switchbox.
+ - Director no longer crashes when importing a certificate and canceling on password prompt.
+ - Commander: Fixed warning icon and connect button when connected to Switchbox.
+ - Updated all IMRSDK.dll to the latest version in the Intel AMT SDK 3.0.
+ - Fixed Manageability Outpost Tool crashing while computer was being re-provisionned.
+ - Manageability Director Tool can now switch a computer from and to PKI/PSK provisioning.
+ - Open AMT Terminal: Added version number on status bar at startup.
+ - Added Hebrew menu translations to Open AMT Terminal.
+ - Fixed Terminal crash when trying to use "reverse watchdog" with no watchdogs already present.
+ - Fixed Terminal showing incorrect power state value in upper right.
+ - Director's UI no longer allows partial un-provision in Small Buisness Mode.
+ - Used translator tool to run all DTK strings thru spell checker.
+ - Added a draft Russian translation to ManageabilityNetStatusTool.
+ - Guardpost: Added remote process handling wtih both prompt and packet support.
+ - Guardpost: Added automatic detection of Intel AMT SOL COM port.
+ - Added first version of Manageability Guardpost Tool v0.01, a C++ version of Manageability Outpost Tool.
+ - Removed "Accept Any Certificates" in Commander, Outpost & Director. This option is now always on with warnings.
+ - Fixed a problem with AMT stack would not reload client certificate correctly.
+ - Improved filter support in Commander, can now add filters with unspecified ip/netmask.
+ - Updated Manageability Switchbox to v0.5.2 - Improved logs and new power state collection feature.
+ - Added French translation of the Open AMT Terminal and forms in IAmtComponents.dll.
+ - Added a Resource Manager and Resource Translator tools to help with internalization.
+ - IAmtTerm scripting now support new text file format which is easy to edit with notepad.
+ - Added a small RESX merging tool in the source package to package RESX files used by internalization tools.
+ - Outpost: Now displays the UI before attempting to connect.
+ - Commander: Fixed environement detection UI to allow no system defense.
+ - Commander: Fixed internalization problem with IDE-R selection of drives in terminal menu.
+ - Commander: Added commit and success message when setting VPN Routing setting.
+ - Outpost: Fixed padlock icon not visible when connecting using TLS.
+
+Changes in v0.37
+
+ - New Japanese internalization and added support for Manageability Monitor Tool in Japanese.
+ - IAmtTerm power state indicator now shows AC/DC power source for mobiles and OS lock-up detection.
+ - Added Commander support for setting the VPN routing flag (AMT 2.5).
+ - Added Commander support environment discovery (AMT 2.5 & 3.0).
+ - Added Commander support for changing ME ping response.
+ - Added Commander view of managed network interface information.
+ - Added "Network" tab in Commander's computer connection.
+ - Fixed UI problems with Switchbox in Commander.
+ - Added "VPN Routing", "Environement Detection" and improved the network interface management in stack.
+ - Added connections warning then connecting with Switchbox with invalid certificate in Commander.
+ - IAmtterm terminal analizer can now see "\r" and "\n", useful for debugging.
+
+Changes in v0.36
+
+ - Removed scripting & data capture in IAmtTerm with used in TCP mode.
+ - Added support for more event types in the display log.
+ - Improved the look of the event log displays in Commander & Outpost, using real list view headers.
+ - Added text and binary capture along with capture replay feature to IAmtTerm.
+ - Commander can now set the TLS certificate for the Manageability Switchbox.
+ - Commander “add computer” form no longer attempts to resolve IP addresses.
+ - Added a "View" menu in Commander to change the treeview and status bar settings.
+ - Added support for both TLS and non-TLS Switchbox connections in Commander.
+ - Added support for changing the Switchbox TLS certificate within Commander.
+ - Commander can now use agent notifications to do clean shutdown & logoff.
+ - Commander now sorts the nodes within a Switchbox.
+
+Changes in v0.35
+
+ - Added agent notification feature in Outpost around watchdog "C0770F68-9174-479b-87A5-A821FDFEF3C7"
+ - Manageability Outpost Tool now always heartbeat this GUID: "C0770F68-9174-479b-87A5-A821FDFEF3C6"
+ - Added web links to news, downloads and forums from the about menu of Commander, Director, Outpost, Monitor.
+ - Moves image resources around to remove duplicate images.
+ - Fixed Japanese and Chinese internalization bug.
+ - Added graceful support for any AMT that returns 404 on circuit breakers.
+ - Added graceful support for AMT 2.5 that returns 404 on wireless web calls.
+ - Added the "-debug" argument to generate detailed logs on Commander, Director, Outpost, Monitor.
+
+Changes in v0.34
+
+ - Added Commander 5 second auto-refresh of the UI for heuristic state & watchdog state.
+ - Commander, Director and Monitor will no longer use the Internet Explorer set web proxy.
+ - New Switchbox connection icon and bug fixes in Commander.
+ - Commander, Director and Outpost now show padlock icons when connecting with TLS.
+ - Fixed the introduction message in IAmtTerm and added correct handing of invalid host.
+ - Director improved handling of hello messages; UI no longer locks up with provisioning.
+ - Certificates created with Manageability Director Tool are now valid for 20 years.
+ - Manageability Commander Tool will now only connect to Manageability Switchbox using TLS.
+ - Manageability Commander Tool & Director no longer look at AMT computer name when reporting name mismatch error.
+ - Fixed crash in IAmtTerm when connection is closed by a peer in TCP mode.
+ - Manageability Director Tool will now report an error is the remote configuration password is bad.
+ - Added single instance running restriction on Director, Outpost and Monitor.
+ - Fixed AMT 2.5 battery asset display, incorrect values where shown.
+ - Updated "ConfigurationServer.exe" to latest gold version.
+ - Manageability Director Tool will now setup certificate & TLS in "Round 1" setup.
+
+Changes in v0.33
+
+ - Fixed problem with IAmtTerm failing to connect to Intel AMT with TLS in some cases.
+ - Added creation of Switchbox certificate in Manageability Director Tool.
+ - IAmtTerm will now close correctly when using in TCP mode and connection is closed.
+ - Removed lock on Manageability Director Tool setup of mutual-auth modes.
+ - Added TLS mutual-auth support to Commander, Director, Monitor, Outpost.
+	NOTE: Outpost service version and IDE-R/SOL in Commander not yet supported with mutual-auth.
+ - Added improved support for NVRAM in Commander, including permission & visibility control.
+ - Added NVRAM storage clear button to Manageability Commander Tool.
+
+Changes in v0.32
+
+ - Outpost now detects and handles changes in computer power state (sleep).
+ - Terminal will not automatically disable IDE-R before performing a power down.
+ - Added button to clear event log in Manageability Commander Tool.
+ - Added local storage access from Manageability Outpost Tool with permissions control.
+ - Added incoming data capture feature in terminal.
+ - Added local terminal display in Outpost. User can see what the console is doing.
+ - Added support for "large font" in Open AMT Terminal.
+ - Manageability Director Tool now includes key usage extension in generated certificates.
+ - Fixed NetTraffic IP sweep passed interval problem.
+ - Added Manageability Director Tool .PEM certificate import and export.
+ - Fixed Manageability Director Tool Hello viewer version decode.
+ - Fixed Manageability Commander Tool to work on Microsoft Windows 64bit OS's (XP & Vista).
+ - Added the preview version of Manageability Monitor Tool, an Manageability Monitor Tooling tool (Preview version).
+ - Added first version of Open AMT Terminal scripting system.
+ - Added Wireless Management enabled/disable button in Manageability Commander Tool.
+
+Changes in v0.31
+
+ - Manageability Commander Tool now has a simplified user interface, right with "-s" option.
+ - Manageability Commander Tool can now be launched to manage a single computer
+	ManageabilityCommanderTool -h:<hostname> -u:<username> -p:<password> [-tls]
+ - Added Manageability Switchbox as part of the Manageability DTK.
+ - Added Manageability Commander Tool support for Manageability Switchbox.
+ - Simplified Remote Configuration in Manageability Director Tool.
+ - Manageability Director Tool certificate manager UI is now more robust.
+ - Improved support for setup.bin file for Remote Configuration.
+ - Added connection warnings in Command & Director when some situations occur.
+ - Removed Manageability Commander Tool alerts when connecting thru Switchbox.
+ - Added ManageabilityCmd.exe, a simple command line Intel AMT tool.
+
+Changes in v0.30
+
+ - Added laptop icon for mobile Intel AMT computer in Commander and Director.
+ - Added Japanese support.
+ - Added a Manageability Outpost Tool workaround when Windows event log can't be created.
+ - Added Intel AMT computer settings cut & paste support in both Commander and Director.
+ - Changed the registry format for both Commander and Director.
+ - Fixed IAmtTerminal translation of RETURN & ESC keys.
+ - Added language switching menu option in Commander, Director & Outpost
+ - Added new exception handling and logging code in Commander, Director & Outpost.
+ - Open AMT Terminal power polling can be stopped with a click on the power state indicator.
+ - Added Intel AMT Command cut & paste of network filters, policies, watchdogs.
+ - Added previous password configuration in Manageability Director Tool USB flash export.
+ - Added serial agent watchdog reporting data commands to Manageability Outpost Tool.
+ - Added "watchdogs" command to Manageability Outpost Tool prompt.
+ - Added watchdog monitor in "serial agent" menu of Open AMT Terminal.
+ - Improved icons in event logs.
+ - Improved event log messages.
+
+Changes in v0.29
+
+ - Added support for watchdogs inside the service version of Manageability Outpost Tool.
+ - Added improved ways of removing alerts in the Manageability Commander Tool alert viewer.
+ - Added support for loading v2.0 setup.bin files in Manageability Director Tool.
+ - Commander and Director now automatically attempt to resolve the hostname of added computers.
+ - Simplified the user interface of Manageability Director Tool profile setup.
+ - Added improved user interface for finding hostname mismatch in Commander & Director.
+ - Fixed multiple bugs when using IAmtTerm as a standalone application.
+ - Added an option to invoke IAmtTerm from the terminal, used for terminal testing.
+ - Added save to file and save to clipboard in terminal analyser.
+ - Added USB flash key support in Manageability Director Tool (Viewer, Import, Export).
+
+Changes in v0.28
+
+ - Added support for ASF remote control commands in Terminal's "Custom Commands".
+ - Added persistent storage of custom remote options in registry.
+ - Added a name resolution form in Manageability Director Tool for debugging.
+ - Fixed a name resolution bug in Manageability Director Tool
+ - Added redirection port control in Manageability Director Tool
+ - Fixed coloring problems with Open AMT Terminal.
+ - Changed "Zero-Touch" to "Remote Configuration" in Manageability Director Tool.
+ - Completely changed SOL terminal color handling.
+ - Added a way to launch telnet and putty from within IAmtTerm.exe, SOL display is cloned.
+ - Improved event log text messages.
+ - Manageability Director Tool: Basic Zero-Touch support now working.
+ - Added support for up to 8 power packages in Manageability Commander Tool.
+ - Fixed a terminal bug when bright and dim esc codes where used.
+ - Fixed exceptions that occurred when reverse lookup failed.
+ - Added un-provisioning support for ZTC in Manageability Director Tool.
+ - Improved a few minor aspects of Director when un-provisioning.
+
+Changes in v0.27
+
+ - Improved the Outpost permission management UI in both stand alone tool and control panel tool.
+ - Added discovery context menu to toggle using IP or resolved name in both Commander and Director.
+ - Manageability Outpost Tool now available in both application and service versions.
+ - Added Manageability Outpost Tool service control panel application.
+ - Added an Outpost UTF-8 sample output command.
+ - Added Command and Outpost support for file browsing over SOL.
+ - Started work on adding user account control in Manageability Commander Tool (not fully working yet).
+ - Added Outpost command line argument: -U:<username> -P:<password> [-TLS] to auto log-in.
+ - IAmtTerm can now be used like a telnet application: IAmtTerm <hostname> <port> [window title]
+ - Manageability Director Tool now has ZTC hash management
+ - Manageability Director Tool can now be used to un-provision AMT computers.
+ - Fixed Manageability Director Tool one-touch error when running on Vista.
+ - Added a "Terminal Analyzer" in IAmtTerm.exe to look at received escape codes.
+ - Added support for user and admin ACL's in Manageability Director Tool.
+ - Added automatic passwork/tls/setup operations into Manageability Director Tool.
+ - Simplified Chinese support greatly improved throughout the DTK.
+ - Added a new Manageability Net Traffic Tool application used to demonstrate AMT filters.
+ - Fixed many crash bugs with Manageability Director Tool during one-touch.
+ - Outpost will not default to not using TLS
+
+Changes in v0.26
+
+ - Manageability Director Tool settings and profiles are much improved. One-Touch config should now work great.
+ - Improved network discovery in both Commander and Director added DNS resolution.
+ - Added Intel AMT hostname / domain name edit in both Commander and Director.
+ - Added Manageability Director Tool admin & password configuration.
+ - Added Manageability Director Tool user account control.
+ - Improved Manageability Director Tool certificate management and added a "All Permissions" certificate creation.
+ - Fixed Manageability Director Tool when connecting to Intel AMT 1.0 computers.
+ - Alert Viewer now saves alerts to registry.
+ - Completed internalization to simplified Chinese.
+	Use "-lzh" to override to simplified Chinese. Western computer will need Asian font packs installed.
+	Use "-len" to override to English.
+ - Added hardware asset printing and HTML save support. The "AssetReportTemplate.htm" file can be change to change how the printing is done.
+ - Added device driver management feature in Outpost and Commander. This feature is available in the
+	"serial agent" menu of the SOL terminal.
+ - Added improved support for generating correct certificates in Manageability Director Tool. Director can now generate different types of certificates for different usages.
+ - Started work on Manageability Director Tool support for zero-touch setup, but it's not complete and will not work.
+ - Fixed an internalization bug in ManageabilityNetStatusTool.
+ - Fixed many more small issues such as adding a refresh button on the network policy panel, etc.
+
+Changes in v0.25
+
+ - Added auto-detection of TLS and removed lots of UI elements.
+ - Fixed a bug in network discovery when scanning 192.168.0.x networks.
+ - Lots of English text was corrected.
+ - Added Manageability Outpost Tool event log feature.
+
+Changes in v0.24
+
+ - Improved parsing of hardware modules
+ - Fixed a MainForm constructor bug generating the list of root certificates.
+ - Added "VT100 / UTF-8" and "ANSI / Extended-ASCII" terminal emulation modes.
+ - Added two different key translations for Fx keys and other keys (Page Up, etc.) in terminal.
+ - Fixed terminal IDE-R display turning on and off.
+ - Corrected and improved much of the English text
+ - Started early work on saving & printing hardware asset.
+ - Improved some of the code for internalization.
+
+Changes in v0.23
+
+ - Added Manageability Director Tool, a setup and configuration tool.
+ - Fixed Intel AMT 1.0 bug in Manageability Commander Tool.
+ - ManageabilityNetStatusTool in now internationalized to Simplified Chinese.
+ - SNMP Traps that can't be parsed are not dumped to Exception.txt.
+ - Added C# sample code for the WSDL wrappers.
+
+Changes in v0.22
+
+ - Added TLS support for Manageability Commander Tool and Manageability Outpost Tool.
+ - Added a "Certificate Manager" in both Commander and Outpost.
+ - Added option to ignore the validity and trust of remote certificates.
+ - Changed the version of imrsdk.dll.
+ - Note: The terminal's IDE-R and SOL don't work in mutual-auth yet.
+
+Changes in v0.21
+
+ - Fixed Agent handing of watchdog agents that are added and removed while heartbeat is performed.
+ - Agent "HWRESCAN" command now works correctly.
+ - Agent "LOGOFF", "RESTART" and "SHUTDOWN" commands now work correctly.
+ - Terminal now handles VT100 escape code to move cursor to 0,0 correctly.
+ - Terminal now supports clear line VT100 escape codes.
+ - Added support for all of the SOAP calls in the security admin core stack.
+ - Fixed the UI to make the "Policy Monitor" move accessible.
+ - Added UI buttons for data refresh where such feature was not obvious before.
+ - Added "Power Down" and "Power Up" remote control commands.
+ - Terminal now disconnects before sending a "Power Down" command.
+ - Added SOL "Connect" and "Disconnect" options in the Terminal "File" menu.
+ - Changed the behavior of the terminal when connecting to AMT 1.0, Terminal will no longer connect by default.
+ - Fixed the behavior of "Power Down" menu option in the batch dialog.
+
+
+-------------------------------------------------------------------
+ * Other names and brands may be claimed as the property of others.
+ * "Intel(R) AMT" is a registered trademark of Intel.
